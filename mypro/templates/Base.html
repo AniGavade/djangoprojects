@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>forms</title>
+    <style>body{text-align: center;}</style>
+<body>
+    <div class="box">
+        <h2>
+            Signup here
+        </h2>
+        {% csrf_token %}
+        <form  method="POST" action="log_in" class="login">                <!--action="log_in-->
+            <label for="">
+                Enter your Username
+            </label>
+            <br>
+            <input type="text" name="username">
+            <br>
+            <label for="">
+                Enter your Email
+            </label>
+            <br>
+            <input type="text" name="email">
+            <br>
+            <!-- <label>
+                Enter your Phone number
+            </label> -->
+            <!-- <br>
+            <input type="number" name="phone">
+            <br> -->
+            <label for="">
+                Enter your Password
+            </label>
+            <br>
+            <input type="text" name="password">
+            <br>
+            <br>
+            <button class="button" type="submit">
+                Submit
+            </button>
+        </form>
+        <br>
+        <!-- <a href="get_data">SEE ALL USERS</a> -->
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="box">
+        <table>
+            <tbody>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>phone</th>
+    
+                    </tr>
+                </thead>
+            </tbody>
+            {% for i in info %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phone}}</td>
+                <td> <a href="update/{{i.id}}">Edit data</a></td>
+                <td> <a href="delete/{{i.id}}" method="delete">Delete data</a></td>
+    
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>forms</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+<body>
+    <div class="box">
+        <h2>
+            Update your information here
+        </h2>
+        <form action="{{data.id}}" method="POST">
+            {% csrf_token %}
+            <label for="">
+                Enter your Username
+            </label>
+            <tr>
+            <br>
+            <input type="text" name="name" value={{data.name}}>
+            <br>
+            <label for="">
+                Enter your New Email
+            </label>
+            <br>
+            <input type="text" name="email" value={{data.email}}>
+            <br>
+            <label>
+                Enter New Phone number
+            </label>
+            <br>
+            <input type="number" name="phone" value={{data.phone}}>
+            <br>
+            <label for="">
+                Enter New Password
+            </label>
+            <br>
+            <input type="text" name="password"  value={{data.password}}>
+            <br>
+            <button class="button" type="submit">
+                Submit
+            </button>
+        </form>
+        <br>
+        <br>
+    </div>
+</body>
+
+</html>

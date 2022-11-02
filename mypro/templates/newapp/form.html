@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>forms</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+<body>
+    <div class="box">
+        <h2>
+            Signup here
+        </h2>
+        <form action="createview" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <br>
+            <button class="button" type="submit">
+                Submit
+            </button>
+        </form>
+        <br>
+            </tbody>
+                <td> <a href="update/{{i.id}}">Edit data</a></td>
+                <td> <a href="delete/{{i.id}}" method="delete">Delete data</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

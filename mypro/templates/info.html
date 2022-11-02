@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info_Page</title>
+</head>
+<body>
+    <a href="Home">Log_in Page</a>
+    <div class="container">
+        <table>
+            <tbody>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>address</th>
+
+                </tr>
+            </thead>
+            </tbody>
+                {% for i in info %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phone}}</td>
+                <!-- <td>{{i.address}}</td> -->
+                <td> <a href="change_data/{{i.id}}">Edit data</a></td>
+                <td> <a href="{% url 'delete' i.pk %}">Delete data</a></td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
